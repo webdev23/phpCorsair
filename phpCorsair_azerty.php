@@ -11,7 +11,7 @@ echo "phpCorsair v0.1!\n";
  *  Add a keyboard shortcut to call, or run in terminal:
  *  Kill anytime to keep the colors as a color roulette.
  * 
- *  php k70.php rainbow
+ *  php phpCorsair_azerty.php rainbow
  * 
  * To kill gksudo killall php
  * *
