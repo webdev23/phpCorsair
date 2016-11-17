@@ -8,6 +8,7 @@
  *  Should works with any device running the ckb-daemon.
  *  The cue software can stay well closed. 
  *  But it can also works on top of the ckb software to add trippy effects.
+ *  It can run many times in parallel to add extra trippy effects.
  *  Make sure the ckb-daemon is running with: <b>sudo ckb-daemon</b>
  *  If the driver fail: <b>sudo killall ckb-daemon && sudo ckb-daemon</b>
  *  Add a keyboard shortcut to call, or run in terminal:
