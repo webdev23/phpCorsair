@@ -1,7 +1,7 @@
 # phpCorsair
 #### Controls Corsair devices running under the ckb-daemon with php.
 
-<img src="http://i.imgur.com/BiiFBMM.gif"></img>
+<img src="http://i.imgur.com/1TjI3cx.gif"></img>
 
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
  *  https://github.com/ccMSC/ckb
@@ -26,4 +26,4 @@
 ## gksudo killall php
 
 
-<img src="http://i.imgur.com/1TjI3cx.gif"></img>
+
