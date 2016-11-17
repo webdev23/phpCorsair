@@ -28,4 +28,6 @@
 <small><i>You shouldn't run this kind of hardware on a server, anyway..</i></small>
 
 
+#### Save to hardware just by calling again. It is made to works as a loop:
 
+## php phpCorsair.php
