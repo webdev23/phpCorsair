@@ -24,6 +24,7 @@
 #### Kill the program to keep the colors:
 
 ## gksudo killall php
+<small><i>You shouldn't run this kind of hardware on a server, anyway..</i></small>
 
 
 
