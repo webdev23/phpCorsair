@@ -1,5 +1,5 @@
 <?php
-echo "phpCorsair_azerty v0.1!\n";
+echo "phpCorsair v0.1!\n";
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
  *  Tested only on ubuntu with the k70rgb, but should works with any device.
  *  This program only need the ckb-daemon to run, beside php.
@@ -33,7 +33,7 @@ echo exec("echo fps 60 > /dev/input/ckb1/cmd");
 usleep(20000);
 
 $GLOBALS['cmd']  = $argv[1];
-$GLOBALS['maxloops']  = '40';
+$GLOBALS['maxloops']  = '38';
 
 function rain() {
 
@@ -42,7 +42,7 @@ function rain() {
 		for ($i = 1; $i <= $GLOBALS['maxloops']; $i++) {
 			if ($i < $GLOBALS['maxloops']) {
 
-			usleep(90000); 
+			usleep(80000); 
 
 			$rainbow=array('ff0000','ff3300','ff6600','ff9900','ffcc00','ffff00','ccff00','99ff00',
 			'66ff00','33ff00','00ff00','00ff33',
@@ -55,18 +55,7 @@ function rain() {
 			'ffff00','ccff00','99ff00','66ff00','33ff00','00ff00','00ff33',
 			'00ff66','00ff99','00ffcc','00ffff','00ccff','0099ff','0066ff',
 			'0033ff','0000ff','3300ff','6600ff','9900ff','cc00ff','ff00ff',
-			'ff00cc','ff0099','ff0066','ff0033','ff0000','ff3300','ff6600','ff9900','ffcc00',
-			'ffff00','ccff00','99ff00','66ff00','33ff00','00ff00','00ff33',
-			'00ff66','00ff99','00ffcc','00ffff','00ccff','0099ff','0066ff',
-			'0033ff','0000ff','3300ff','6600ff','ff0000','ff3300','ff6600','ff9900','ffcc00',
-			'ffff00','ccff00','99ff00','66ff00','33ff00','00ff00','00ff33',
-			'00ff66','00ff99','00ffcc','00ffff','00ccff','0099ff','0066ff',
-			'0033ff','0000ff','3300ff','6600ff','9900ff','cc00ff','ff00ff',
-			'ff00cc','ff0099','ff0066','ff0033','ff0000','ff3300','ff6600','ff9900','ffcc00',
-			'ffff00','ccff00','99ff00','66ff00','33ff00','00ff00','00ff33',
-			'00ff66','00ff99','00ffcc','00ffff','00ccff','0099ff','0066ff',
-			'0033ff','0000ff','3300ff','6600ff','ff0000','ff3300','ff6600','ff9900','ffcc00',
-			'ffff00','ccff00','99ff00','66ff00','33ff00','00ff00');
+			'ff00cc','ff0099','ff0066','ff0033','ff0000','ff3300','ff6600','ff9900','ffcc00');
 
 			//~ echo $rainbow[$i];
 			echo exec("echo rgb ".$rainbow[$i]." esc,f1,f2,f3,f4,f5,f6,f7,f7,f8,f9,f10,f11,f12:".
