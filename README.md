@@ -10,7 +10,7 @@
  *  But it can also works on top of the ckb software to add trippy effects.
  *  Make sure the ckb-daemon is running with: <b>sudo ckb-daemon</b>
  *  If the driver fail: <b>sudo killall ckb-daemon && sudo ckb-daemon</b>
- *  Add a keyboard shortcut to call, or run like this in terminal:
+ *  Add a keyboard shortcut to call, or run in terminal:
  *  Kill anytime to keep the colors as a color roulette.
 
 #### Install php7.0
