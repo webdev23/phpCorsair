@@ -1,12 +1,15 @@
 <?php
 echo "phpCorsair v0.1!\n";
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
- *  Tested only on ubuntu with the k70rgb, but should works with any device.
- *  This program only need the ckb-daemon to run, beside php.
- *  It can also works in adjonction of the ckb software to add cools effects.
- *  Make sure the ckb-daemon is running with: sudo ckb-daemon
- *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
- *  Add a keyboard shortcut to call, or run like this in terminal:
+ *  https://github.com/ccMSC/ckb
+ *  Should works with any device running the ckb-daemon.
+ *  The cue software can stay well closed. 
+ *  But it can also works on top of the ckb software to add trippy effects.
+ *  It can run many times in parallel to add extra trippy effects.
+ *  Make sure the ckb-daemon is running with: <b>sudo ckb-daemon</b>
+ *  If the driver fail: <b>sudo killall ckb-daemon && sudo ckb-daemon</b>
+ *  Add a keyboard shortcut to call, or run in terminal:
+ *  Kill anytime to keep the colors as a color roulette.
  * 
  *  php k70.php rainbow
  * 
