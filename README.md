@@ -12,11 +12,17 @@
  *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
  *  Add a keyboard shortcut to call, or run like this in terminal:
  *  Kill anytime to keep the colors as a color roulette.
- 
-### Run: 
+
+#### Install php7.0
+
+## sudo apt install php7.0
+
+#### To run the program (make a keyboard shorcut!)
+
 ## php phpCorsair.php rainbow
 
-### Kill:
+#### Kill the program to keep the colors:
+
 ## gksudo killall php
 
 
