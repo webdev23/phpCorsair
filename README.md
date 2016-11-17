@@ -7,8 +7,7 @@
  *  It can also works in adjonction of the ckb software to add cools effects.
  *  Make sure the ckb-daemon is running with: sudo ckb-daemon
  *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
- *  Add a keyboard shortcut to call this program, or run like this in terminal:
- * 
+ *  Add a keyboard shortcut to call, or run like this in terminal:
  
 ##### Run: 
 #### php phpCorsair.php rainbow
