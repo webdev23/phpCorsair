@@ -2,13 +2,13 @@
 
 echo "ponyCorsair v0.1!\n";
 
-/*  Rainbow efect for Corsair devices running trought ckb-daemon.
- *  Tested only on ubuntu with the k70rgb, but should works for any device.
+/*  Rainbow effect for Corsair devices running trought the ckb-daemon.
+ *  Tested only on ubuntu with the k70rgb, but should works with any device.
  *  This program only need the ckb-daemon to run, beside php.
  *  It can also works in adjonction of the ckb software to add cools effects.
  *  Make sure the ckb-daemon is running with: sudo ckb-daemon
  *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
- *  Add a keyboard shortcut to call this program, or run like this in terminal:
+ *  Add a keyboard shortcut to call, or run like this in terminal:
  * 
  *  php k70.php rainbow
  * 
