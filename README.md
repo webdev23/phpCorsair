@@ -9,6 +9,9 @@
  *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
  *  Add a keyboard shortcut to call this program, or run like this in terminal:
  * 
- #### php phpCorsair.php rainbow
- * 
- * To kill: gksudo killall php
+ 
+##### Run: 
+#### php phpCorsair.php rainbow
+
+##### Kill:
+#### gksudo killall php
