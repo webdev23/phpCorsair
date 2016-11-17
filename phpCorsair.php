@@ -1,6 +1,6 @@
 <?php
 
-echo "ponyCorsair v0.1!\n";
+echo "phpCorsair v0.1!\n";
 
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
  *  Tested only on ubuntu with the k70rgb, but should works with any device.
