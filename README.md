@@ -6,7 +6,8 @@
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
  *  https://github.com/ccMSC/ckb
  *  Should works with any device running the ckb-daemon.
- *  It can also works on top of the ckb software to add trippy effects.
+ *  The cue software doesn't need to be launched. 
+ *  But it can also works on top of the ckb software to add trippy effects.
  *  Make sure the ckb-daemon is running with: <b>sudo ckb-daemon</b>
  *  If the driver fail: <b>sudo killall ckb-daemon && sudo ckb-daemon</b>
  *  Add a keyboard shortcut to call, or run like this in terminal:
