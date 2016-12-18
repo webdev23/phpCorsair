@@ -32,6 +32,7 @@
 
 ## php phpCorsair.php
 
-### Deploy electron app in one line. <br>
-### It will activate the spectral equalizer and the background daemon
+# Deploy in electron app: <br>
+### It will activate the spectral equalizer and the background daemon.
+
 git clone https://github.com/electron/electron-api-demos && mv electron-api-demos phpCorsair! && cd phpCorsair! && git clone https://github.com/webdev23/phpCorsair.git && mv phpCorsair/* . && npm install && npm start
