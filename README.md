@@ -2,6 +2,7 @@
 #### Controls Corsair devices running under the ckb-daemon with php
 
 <img src="http://i.imgur.com/1TjI3cx.gif"></img>
+<img src="http://i.imgur.com/f7JEuLl.png"></img>
 
 /*  Rainbow effect for Corsair devices running trought the ckb-daemon.
  *  https://github.com/ccMSC/ckb
@@ -18,7 +19,7 @@
 
 ## sudo apt install php7.0
 
-#### To run the program (make a keyboard shorcut!)
+#### To run the rainbow program alone (make a keyboard shorcut!)
 
 ## php phpCorsair.php rainbow
 
@@ -27,7 +28,10 @@
 ## gksudo killall php
 <small><i>You shouldn't run this kind of hardware on a server, anyway..</i></small>
 
-
 #### Save to hardware just by calling again. It is made to works as a loop:
 
 ## php phpCorsair.php
+
+### Deploy electron app in one line. <br>
+### It will activate the spectral equalizer and the background daemon
+git clone https://github.com/electron/electron-api-demos && mv electron-api-demos phpCorsair! && cd phpCorsair! && git clone https://github.com/webdev23/phpCorsair.git && mv phpCorsair/* . && npm install && npm start
