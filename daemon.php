@@ -1,35 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
 
-//~ echo "phpCorsair v0.1!\n";
-/*  Rainboz effect for Corsair devices running trought the ckb-daemon.
- *  Tested only on ubuntu zith the k70rgb, but should zorks zith any device.
- *  This program only need the ckb-daemon to run, beside php.
- *  It can also zorks in adjonction of the ckb softzare to add cools effects.
- *  Make sure the ckb-daemon is running zith: sudo ckb-daemon
- *  If the driver fail: sudo killall ckb-daemon && sudo ckb-daemon
- *  Add a keyboard shortcut to call, or run like this in terminal:
- * 	<!-- 
-	RGB keyboard audio mapping for cue
-	Nico KraZhtest | ponyhacks.com-->
- * 
- * To kill gksudo killall php
- * *
- * Enjoy the pozerful ztf licence.
- * *
- * Nico KraZhtest | nov2016 
- *	ponyhacks.com
- * */
-
-//~ stream_set_blocking(STDIN, 0);
-//~ error_reporting(0);
-//~ usleep(140000);
-
-//~ echo exec("echo hzsave > /dev/input/ckb1/cmd");
-//~ echo exec("echo idle > /dev/input/ckb1/cmd");
-
-//~ usleep(140000);
-
 $eqdata = $_GET['eqdata'];
 $eqbColor = $_GET['eqbColor'];
 $eqhColor = $_GET['eqhColor'];
@@ -84,41 +55,6 @@ echo exec("echo fps ".$eqfps." > /dev/input/ckb1/cmd");
 	'ff00cc','ff0099','ff0066','ff0033','ff0000','ff3300','ff6600'];
 	
 	$whiteRabbit = ['02E148','086213','67F383','044A0B'];	
-
- //~ function nuances()
- //~ {
-    //~ $inc=($eqbColor - $eqbColor)/($entries-1);
-    //~ $out=array(0=>$start);
-    //~ for ($x=1; $x<$entries;$x++) {
-      //~ $out[$x]=$start+$inc * $x;
-    //~ }
-    //~ echo $out;
-    //~ return $out;
- //~ };echo nuances($eqbColor,$eqoColor, $entries=10);
- 
-//~ $GLOBALS['cmd']  = $argv[1];
-//~ $GLOBALS['cmd']  = "rainboz";
-//~ $GLOBALS['ratio']  = $argv[2];
-//~ echo $GLOBALS['ratio'];
-//~ echo $_GET['ratio'];
-//~ $GLOBALS['maxloops'] = $_GET['loops'];
-
-	//~ usleep(400000);
-
-
-//~ $eqsum = array_sum($eqdata)*100;
-
-//~ if ($_GET['mode'] == 'matrix'){
-	
-	
-	//~ $eqbColor = $world[$_GET['pot']];
-	//~ $eqhColor = array_rand($world, 2);
-	//~ $eqoColor = array_rand($world, 2);
-//~ }
-
-//~ // echo exec("echo rgb ".$eq0Color." 111111 > /dev/input/ckb1/cmd");
-
-
 
 
 if ($eqdata > $rainbowRatio ) {
@@ -213,10 +149,6 @@ if ($eq4 || $eq5 || $eq6 || $eq7 || $eq8 > "359") {
 
 }
 
-//~ echo exec("echo get :keys > /dev/input/ckb1/cmd");
-
-//~ echo exec("echo rgb ".$eq0Color." 111111 > /dev/input/ckb1/cmd");
-//~ 
 echo exec("echo rgb space:560000 > /dev/input/ckb1/cmd");
 
 echo exec("echo rgb lock,mute,light:560000 > /dev/input/ckb1/cmd");
