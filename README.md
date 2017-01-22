@@ -20,7 +20,7 @@
 ## sudo apt install php7.0
 
 #### To run phpCorsair: open the index.html file with chromium browser.
-All files shouls stays on the same folder, as they are going to talk to each others.
+All files should stays on the same folder, as they are going to talk to each others.
 This should be all.
 
 Enjoy!
