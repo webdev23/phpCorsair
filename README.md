@@ -1,4 +1,4 @@
-# phpCorsair! Spectral audio events for corsair RGB devices.
+# phpCorsair! Spectral audio based events for corsair RGB devices.
 #### Controls Corsair devices running under the ckb-daemon with php
 
 <img src="http://i.imgur.com/1TjI3cx.gif"></img>
@@ -19,7 +19,7 @@
 
 ## sudo apt install php7.0
 
-#### To run the rainbow program
+#### To run phpCorsair!
 Open <bold>index.html</bold> file with chrome/chromium browser.
 Leave all files on the same folder, as they are going to talk to each others.
 This should be all.
