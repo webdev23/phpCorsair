@@ -155,7 +155,7 @@ echo exec("echo rgb lock,mute,light:560000 > /dev/input/ckb1/cmd");
 
 
 if ($_GET['mode'] == 'rainbow'){
-	echo shell_exec("php k70.php ".$eqbColor." ".$eqoColor);
+	echo shell_exec("php ./k70.php ".$eqbColor." ".$eqoColor);
 	echo $return_var;
 
 }
