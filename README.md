@@ -19,20 +19,9 @@
 
 ## sudo apt install php7.0
 
-#### To run the rainbow program alone (make a keyboard shorcut!)
+#### To run the rainbow program
+Open <bold>index.html</bold> file with chrome/chromium browser.
+Leave all files on the same folder, as they are going to talk to each others.
+This should be all.
 
-## php phpCorsair.php rainbow
-
-#### Kill the program to keep the colors:
-
-## gksudo killall php
-<small><i>You shouldn't run this kind of hardware on a server, anyway..</i></small>
-
-#### Save to hardware just by calling again. It is made to works as a loop:
-
-## php phpCorsair.php
-
-# Deploy in electron app: <br>
-### It will activate the spectral equalizer and the background daemon.
-
-git clone https://github.com/electron/electron-api-demos && mv electron-api-demos phpCorsair! && cd phpCorsair! && git clone https://github.com/webdev23/phpCorsair.git && mv phpCorsair/* . && npm install && npm start
+Enjoy!
