@@ -1,0 +1,1189 @@
+<!doctype html>
+<html>
+<head>
+	<!-- 
+	RGB keyboard audio mapping for cue
+	Nico KraZhtest | ponyhacks.com-->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>phpCorsair!</title>
+
+
+	<style>
+	a{color:white;text-decoration: none;}
+body {
+	
+	zoom: .65;
+margin:0 0 0 4%;
+passing:0;
+width:100%;
+min-width:700px;
+height:100%;
+overflow-X: hidden;
+font-size:2em;
+color:chartreuse; /* Nico's home */'
+font-family: "helvetica",sans-serif;
+background: linear-gradient(to right, #000200 0%,#040710 100%);-webkit-user-select: none;
+}
+#warp{
+  width:400px;
+  position: relative;
+  margin:0 auto;
+  display: block;
+  padding: 0 0%;
+  background-color:gray;
+}
+
+	
+	canvas { 
+
+		background: #202020; 
+		width: 120%;
+		height: 40%;
+		box-shadow: 0px 0px 10px blue;
+	}
+	#viz {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	@media (orientation: landscape) {
+		body { flex-direction: row;}
+		#controls { flex-direction: column; height: 100%; width: 10%;}
+		#viz { height: 100%; width: 90%;}
+	}
+
+	span {display:inline;
+		font-size:3em;
+
+		font:caption
+		}
+ #pwnyStatus,#copy {font-size:2em;color:chartreuse;height:20px;letter-spacing: -.39em;}
+ hr{width:630px}
+input[type=range].pwny {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 11.65px 0;
+}
+input[type=range].pwny:focus {
+  outline: none;
+}
+input[type=range].pwny::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15.7px;
+  cursor: pointer;
+  box-shadow: 3.5px 3.5px 8px rgba(88, 191, 179, 0.17), 0px 0px 3.5px rgba(106, 198, 187, 0.17);
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: 3.6px;
+  border: 2.3px solid #1f1820;
+}
+input[type=range].pwny::-webkit-slider-thumb {
+  box-shadow: 1.2px 1.2px 1px #050000, 0px 0px 1.2px #1f0000;
+  border: 0.2px solid #000000;
+  height: 39px;
+  width: 34px;
+  border-radius: 33px;
+  background: #93d7b2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -13.95px;
+}
+input[type=range].pwny:focus::-webkit-slider-runnable-track {
+  background: rgba(0, 0, 0, 0.78);
+}
+input[type=range].pwny::-moz-range-track {
+  width: 100%;
+  height: 15.7px;
+  cursor: pointer;
+  box-shadow: 3.5px 3.5px 8px rgba(88, 191, 179, 0.17), 0px 0px 3.5px rgba(106, 198, 187, 0.17);
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: 3.6px;
+  border: 2.3px solid #1f1820;
+}
+input[type=range].pwny::-moz-range-thumb {
+  box-shadow: 1.2px 1.2px 1px #050000, 0px 0px 1.2px #1f0000;
+  border: 0.2px solid #000000;
+  height: 39px;
+  width: 34px;
+  border-radius: 33px;
+  background: #93d7b2;
+  cursor: pointer;
+}
+input[type=range].pwny::-ms-track {
+  width: 100%;
+  height: 15.7px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].pwny::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.78);
+  border: 2.3px solid #1f1820;
+  border-radius: 7.2px;
+  box-shadow: 3.5px 3.5px 8px rgba(88, 191, 179, 0.17), 0px 0px 3.5px rgba(106, 198, 187, 0.17);
+}
+input[type=range].pwny::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.78);
+  border: 2.3px solid #1f1820;
+  border-radius: 7.2px;
+  box-shadow: 3.5px 3.5px 8px rgba(88, 191, 179, 0.17), 0px 0px 3.5px rgba(106, 198, 187, 0.17);
+}
+input[type=range].pwny::-ms-thumb {
+  box-shadow: 1.2px 1.2px 1px #050000, 0px 0px 1.2px #1f0000;
+  border: 0.2px solid #000000;
+  height: 39px;
+  width: 34px;
+  border-radius: 33px;
+  background: #93d7b2;
+  cursor: pointer;
+  height: 15.7px;
+}
+input[type=range].pwny:focus::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.78);
+}
+input[type=range].pwny:focus::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+
+body {
+	font-family: caption;
+	font-size: 6px;
+	background: #1E1E20;
+	text-align: center;
+}
+
+.switch {
+	display: inline-block;
+	margin: 10em 2em;
+	position: relative;
+	border-radius: 3.5em;
+	-webkit-box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+	box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+}
+
+.switch label {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.switch input {
+	display: none;
+}
+
+.switch span {
+	display: block;
+	-webkit-transition: top 0.2s;
+	-moz-transition: top 0.2s;
+	-ms-transition: top 0.2s;
+	-o-transition: top 0.2s;
+	transition: top 0.2s;
+}
+
+.switch-border1 {
+	border: 0.1em solid #000;
+	border-radius: 3.5em;
+	-webkit-box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+	-moz-box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+}
+
+.switch-border2 {
+	width: 6.6em;
+	height: 12.6em;
+	position: relative;
+	border: 0.1em solid #323232;
+	background-image: -webkit-gradient(linear, left top, right top, from(#2D2D2D), color-stop(0.5, #4B4B4B), to(#2D2D2D));
+	background-image: -webkit-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -moz-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -ms-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -o-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: linear-gradient(to right, #2D2D2D, #4B4B4B, #2D2D2D);
+	border-radius: 3.4em;
+}
+
+.switch-border2:before,
+.switch-border2:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	opacity: .3;
+	border-radius: 3.4em;
+}
+
+.switch-border2:before {
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(#000, rgba(0,0,0,0));
+	background: -moz-linear-gradient(#000, rgba(0,0,0,0));
+	background: -ms-linear-gradient(#000, rgba(0,0,0,0));
+	background: -o-linear-gradient(#000, rgba(0,0,0,0));
+	background: linear-gradient(#000, rgba(0,0,0,0));
+}
+
+.switch-border2:after {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(#000));
+	background: -webkit-linear-gradient(rgba(0,0,0,0), #000);
+	background: -moz-linear-gradient(rgba(0,0,0,0), #000);
+	background: -ms-linear-gradient(rgba(0,0,0,0), #000);
+	background: -o-linear-gradient(rgba(0,0,0,0), #000);
+	background: linear-gradient(rgba(0,0,0,0), #000);
+}
+
+.switch-top {
+	width: 100%;
+	height: 84%;
+	position: absolute;
+	top: 8%;
+	left: 0;
+	z-index: 1;
+	background-image: -webkit-gradient(linear, left top, right top, from(#2D2D2D), color-stop(0.5, #4B4B4B), to(#2D2D2D));
+	background-image: -webkit-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -moz-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -ms-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -o-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: linear-gradient(to right, #2D2D2D, #4B4B4B, #2D2D2D);
+	border-radius: 3.4em;
+}
+
+.switch-shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	border-radius: 3.4em;
+	-webkit-box-shadow: 0 0 2em black inset;
+	-moz-box-shadow: 0 0 2em black inset;
+	box-shadow: 0 0 2em black inset;
+}
+
+.switch-handle-left,
+.switch-handle-right {
+	content: '';
+	display: block;
+	width: 3.6em;
+	height: 0;
+	position: absolute;
+	top: 6.6em;
+	z-index: 2;
+	border-bottom: 4.5em solid #111;
+	border-left: 0.7em solid transparent;
+	border-right: 0.7em solid transparent;
+	border-radius: 0;
+}
+
+.switch-handle-left {
+	left: 0.8em;
+}
+
+.switch-handle-right {
+	right: 0.8em;
+}
+
+.switch-handle {
+	width: 3.6em;
+	height: 4.5em;
+	position: absolute;
+	top: 6.6em;
+	left: 1.5em;
+	z-index: 3;
+	background: #333;
+	background-image: -webkit-gradient(linear, left top, right top, from(#111), color-stop(0.4, #777), color-stop(0.5, #888), color-stop(0.6, #777), to(#111));
+	background-image: -webkit-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -moz-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -ms-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -o-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: linear-gradient(to right, #111, #777 40%, #888, #777 60%, #111);
+	border-radius: 0;
+}
+
+.switch-handle-top {
+	width: 5em;
+	height: 5em;
+	position: absolute;
+	top: 8.5em;
+	left: 0.8em;
+	z-index: 4;
+	background-color: #555;
+	background-image: -webkit-gradient(linear, left top, right top, from(#5F5F5F), to(#878787));
+	background-image: -webkit-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -moz-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -ms-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -o-linear-gradient(left, #5F5F5F, #878787);
+	background-image: linear-gradient(to right, #5F5F5F, #878787);
+	border-top: 0.2em solid #AEB2B3;
+	border-radius: 2.5em;
+}
+
+.switch-handle-bottom {
+	width: 3.6em;
+	height: 3.6em;
+	position: absolute;
+	top: 4.7em;
+	left: 1.5em;
+	z-index: 3;
+	background: #333;
+	background-image: -webkit-gradient(linear, left top, right top, from(#111), color-stop(0.4, #777), color-stop(0.5, #888), color-stop(0.6, #777), to(#111));
+	background-image: -webkit-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -moz-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -ms-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -o-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: linear-gradient(to right, #111, #777 40%, #888, #777 60%, #111);
+	border-top: 0.2em solid #141414;
+	border-radius: 1.8em;
+}
+
+.switch-handle-base {
+	width: 4.2em;
+	height: 4.2em;
+	position: absolute;
+	top: 3.8em;
+	left: 1.2em;
+	z-index: 2;
+	border-top: 0.2em solid rgba(255,255,255,0.35);
+	border-radius: 2.1em;
+	-webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+	-moz-box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+	box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+}
+
+.switch-led {
+	position: absolute;
+	left: 2em;
+	border-radius: 1.4em;
+}
+
+.switch-led-border {
+	border: 0.2em solid black;
+	border-radius: 1.3em;
+}
+
+.switch-led-light {
+	border-radius: 1.1em;
+	-webkit-box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+	-moz-box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+	box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+}
+
+.switch-led-glow {
+	width: 2em;
+	height: 2em;
+	position: relative;
+	border-radius: 1em;
+}
+
+.switch-led-glow:before {
+	content: '';
+	display: block;
+	width: 0.6em;
+	height: 0.6em;
+	position: absolute;
+	top: 0.3em;
+	left: 0.7em;
+	background: rgba(255,255,255,0.2);
+	border-radius: 0.3em;
+	-webkit-box-shadow: 0 0 1em rgba(255,255,255,0.75);
+	-moz-box-shadow: 0 0 1em rgba(255,255,255,0.75);
+	box-shadow: 0 0 1em rgba(255,255,255,0.75);
+}
+
+.switch-led-glow:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	border: 1em solid #fff;
+	border-color: transparent #fff transparent #fff;
+	border-radius: 1em;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.switch-led:after {
+	display: block;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	color: #666;
+	font-family: arial, verdana, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 0.1em rgba(0,0,0,0.7);
+}
+
+.switch-led-green:after {
+	content: 'ON';
+	top: -1.8em;
+}
+
+.switch-led-red:after {
+	content: 'OFF';
+	bottom: -1.8em;
+}
+
+.switch-led-green {
+	top: -5em;
+	border-top: 0.1em solid rgba(0,161,75,0.5);
+	border-bottom: 0.1em solid rgba(255,255,255,0.25);
+}
+
+.switch-led-green .switch-led-light {
+	background: rgb(0,161,75);
+	border: 0.1em solid rgb(0,104,56);
+}
+
+.switch-led-red {
+	bottom: -5em;
+	border-top: 0.1em solid rgba(237,28,36,0.2);
+	border-bottom: 0.1em solid rgba(255,255,255,0.25);
+	-webkit-box-shadow: 0 0 3em rgb(237,28,36);
+	-moz-box-shadow: 0 0 3em rgb(237,28,36);
+	box-shadow: 0 0 3em rgb(237,28,36);
+}
+
+.switch-led-red .switch-led-light {
+	background: rgb(237,28,36);
+	border: 0.1em solid rgb(161,30,45);
+}
+
+.switch-led-red .switch-led-glow {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.3);
+	filter: alpha(opacity=30);
+}
+
+/* Switch on */
+
+.switch input:checked~.switch-handle-left, .switch input:checked~.switch-handle-right {
+	top: 1.5em;
+	border-bottom: 0;
+	border-top: 4.5em solid #111;
+}
+
+.switch input:checked~.switch-handle {
+	top: 1.5em;
+}
+
+.switch input:checked~.switch-handle-top  {
+	top: -1em;
+	border-top: 0;
+	border-bottom: 0.2em solid #AEB2B3;
+}
+
+.switch input:checked~.switch-handle-bottom {
+	top: 4.2em;
+	border-top: 0;
+	border-bottom: 0.2em solid #141414;
+}
+
+.switch input:checked~.switch-handle-base {
+	top: 4.5em;
+	border-top: 0;
+	border-bottom: 0.2em solid rgba(255,255,255,0.35);
+}
+
+.switch input:checked~.switch-led-green {
+	-webkit-box-shadow: 0 0 3em rgb(0,161,75);
+	-moz-box-shadow: 0 0 3em rgb(0,161,75);
+	box-shadow: 0 0 3em rgb(0,161,75);
+}
+
+.switch input:checked~.switch-led-green .switch-led-glow {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.4);
+	filter: alpha(opacity=40);
+}
+
+.switch input:checked~.switch-led-red {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.switch input:checked~.switch-led-red .switch-led-glow {
+	background: rgba(255, 255, 255, 0);
+	filter: alpha(opacity=0);
+}
+
+
+.knob {
+	display: inline-block;
+	margin: 10em 2em;
+	position: relative;
+	border-radius: 3.5em;
+	-webkit-box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+	box-shadow: 0 0 0.5em rgba(255,255,255,0.2);
+}
+
+.knob label {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.knob input {
+	display: none;
+}
+
+.knob span {
+	display: block;
+	-webkit-transition: top 0.2s;
+	-moz-transition: top 0.2s;
+	-ms-transition: top 0.2s;
+	-o-transition: top 0.2s;
+	transition: top 0.2s;
+}
+
+.knob-border1 {
+	border: 0.1em solid #000;
+	border-radius: 3.5em;
+	-webkit-box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+	-moz-box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0.2em rgba(255, 255, 255, 0.2);
+}
+
+.knob-border2 {
+	width: 6.6em;
+	height: 12.6em;
+	position: relative;
+	border: 0.1em solid #323232;
+	background-image: -webkit-gradient(linear, left top, right top, from(#2D2D2D), color-stop(0.5, #4B4B4B), to(#2D2D2D));
+	background-image: -webkit-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -moz-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -ms-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -o-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: linear-gradient(to right, #2D2D2D, #4B4B4B, #2D2D2D);
+	border-radius: 3.4em;
+}
+
+.knob-border2:before,
+.knob-border2:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	opacity: .3;
+	border-radius: 3.4em;
+}
+
+.knob-border2:before {
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(#000, rgba(0,0,0,0));
+	background: -moz-linear-gradient(#000, rgba(0,0,0,0));
+	background: -ms-linear-gradient(#000, rgba(0,0,0,0));
+	background: -o-linear-gradient(#000, rgba(0,0,0,0));
+	background: linear-gradient(#000, rgba(0,0,0,0));
+}
+
+.knob-border2:after {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(#000));
+	background: -webkit-linear-gradient(rgba(0,0,0,0), #000);
+	background: -moz-linear-gradient(rgba(0,0,0,0), #000);
+	background: -ms-linear-gradient(rgba(0,0,0,0), #000);
+	background: -o-linear-gradient(rgba(0,0,0,0), #000);
+	background: linear-gradient(rgba(0,0,0,0), #000);
+}
+
+.knob-top {
+	width: 100%;
+	height: 84%;
+	position: absolute;
+	top: 8%;
+	left: 0;
+	z-index: 1;
+	background-image: -webkit-gradient(linear, left top, right top, from(#2D2D2D), color-stop(0.5, #4B4B4B), to(#2D2D2D));
+	background-image: -webkit-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -moz-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -ms-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: -o-linear-gradient(left, #2D2D2D, #4B4B4B, #2D2D2D);
+	background-image: linear-gradient(to right, #2D2D2D, #4B4B4B, #2D2D2D);
+	border-radius: 3.4em;
+}
+
+.knob-shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	border-radius: 3.4em;
+	-webkit-box-shadow: 0 0 2em black inset;
+	-moz-box-shadow: 0 0 2em black inset;
+	box-shadow: 0 0 2em black inset;
+}
+
+.knob-handle-left,
+.knob-handle-right {
+	content: '';
+	display: block;
+	width: 3.6em;
+	height: 0;
+	position: absolute;
+	top: 6.6em;
+	z-index: 2;
+	border-bottom: 4.5em solid #111;
+	border-left: 0.7em solid transparent;
+	border-right: 0.7em solid transparent;
+	border-radius: 0;
+}
+
+.knob-handle-left {
+	left: 0.8em;
+}
+
+.knob-handle-right {
+	right: 0.8em;
+}
+
+.knob-handle {
+	width: 3.6em;
+	height: 4.5em;
+	position: absolute;
+	top: 6.6em;
+	left: 1.5em;
+	z-index: 3;
+	background: #333;
+	background-image: -webkit-gradient(linear, left top, right top, from(#111), color-stop(0.4, #777), color-stop(0.5, #888), color-stop(0.6, #777), to(#111));
+	background-image: -webkit-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -moz-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -ms-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -o-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: linear-gradient(to right, #111, #777 40%, #888, #777 60%, #111);
+	border-radius: 0;
+}
+
+.knob-handle-top {
+	width: 5em;
+	height: 5em;
+	position: absolute;
+	top: 8.5em;
+	left: 0.8em;
+	z-index: 4;
+	background-color: #555;
+	background-image: -webkit-gradient(linear, left top, right top, from(#5F5F5F), to(#878787));
+	background-image: -webkit-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -moz-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -ms-linear-gradient(left, #5F5F5F, #878787);
+	background-image: -o-linear-gradient(left, #5F5F5F, #878787);
+	background-image: linear-gradient(to right, #5F5F5F, #878787);
+	border-top: 0.2em solid #AEB2B3;
+	border-radius: 2.5em;
+}
+
+.knob-handle-bottom {
+	width: 3.6em;
+	height: 3.6em;
+	position: absolute;
+	top: 4.7em;
+	left: 1.5em;
+	z-index: 3;
+	background: #333;
+	background-image: -webkit-gradient(linear, left top, right top, from(#111), color-stop(0.4, #777), color-stop(0.5, #888), color-stop(0.6, #777), to(#111));
+	background-image: -webkit-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -moz-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -ms-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: -o-linear-gradient(left, #111, #777 40%, #888, #777 60%, #111);
+	background-image: linear-gradient(to right, #111, #777 40%, #888, #777 60%, #111);
+	border-top: 0.2em solid #141414;
+	border-radius: 1.8em;
+}
+
+.knob-handle-base {
+	width: 4.2em;
+	height: 4.2em;
+	position: absolute;
+	top: 3.8em;
+	left: 1.2em;
+	z-index: 2;
+	border-top: 0.2em solid rgba(255,255,255,0.35);
+	border-radius: 2.1em;
+	-webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+	-moz-box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+	box-shadow: 0 0 0.5em rgba(0,0,0,0.8) inset;
+}
+
+.knob-led {
+	position: absolute;
+	left: 2em;
+	border-radius: 1.4em;
+}
+
+.knob-led-border {
+	border: 0.2em solid black;
+	border-radius: 1.3em;
+}
+
+.knob-led-light {
+	border-radius: 1.1em;
+	-webkit-box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+	-moz-box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+	box-shadow: 0 0 0.5em rgba(255,255,255,0.5) inset;
+}
+
+.knob-led-glow {
+	width: 2em;
+	height: 2em;
+	position: relative;
+	border-radius: 1em;
+}
+
+.knob-led-glow:before {
+	content: '';
+	display: block;
+	width: 0.6em;
+	height: 0.6em;
+	position: absolute;
+	top: 0.3em;
+	left: 0.7em;
+	background: rgba(255,255,255,0.2);
+	border-radius: 0.3em;
+	-webkit-box-shadow: 0 0 1em rgba(255,255,255,0.75);
+	-moz-box-shadow: 0 0 1em rgba(255,255,255,0.75);
+	box-shadow: 0 0 1em rgba(255,255,255,0.75);
+}
+
+.knob-led-glow:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	border: 1em solid #fff;
+	border-color: transparent #fff transparent #fff;
+	border-radius: 1em;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.knob-led:after {
+	display: block;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	color: #666;
+	font-family: arial, verdana, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 0.1em rgba(0,0,0,0.7);
+}
+
+.knob-led-green:after {
+	content: 'ON';
+	top: -1.8em;
+}
+
+.knob-led-red:after {
+	content: 'OFF';
+	bottom: -1.8em;
+}
+
+.knob-led-green {
+	top: -5em;
+	border-top: 0.1em solid rgba(0,161,75,0.5);
+	border-bottom: 0.1em solid rgba(255,255,255,0.25);
+}
+
+.knob-led-green .knob-led-light {
+	background: rgb(0,161,75);
+	border: 0.1em solid rgb(0,104,56);
+}
+
+.knob-led-red {
+	bottom: -5em;
+	border-top: 0.1em solid rgba(237,28,36,0.2);
+	border-bottom: 0.1em solid rgba(255,255,255,0.25);
+	-webkit-box-shadow: 0 0 3em rgb(237,28,36);
+	-moz-box-shadow: 0 0 3em rgb(237,28,36);
+	box-shadow: 0 0 3em rgb(237,28,36);
+}
+
+.knob-led-red .knob-led-light {
+	background: rgb(237,28,36);
+	border: 0.1em solid rgb(161,30,45);
+}
+
+.knob-led-red .knob-led-glow {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.3);
+	filter: alpha(opacity=30);
+}
+
+/* knob on */
+
+.knob input:checked~.knob-handle-left, .knob input:checked~.knob-handle-right {
+	top: 1.5em;
+	border-bottom: 0;
+	border-top: 4.5em solid #111;
+}
+
+.knob input:checked~.knob-handle {
+	top: 1.5em;
+}
+
+.knob input:checked~.knob-handle-top  {
+	top: -1em;
+	border-top: 0;
+	border-bottom: 0.2em solid #AEB2B3;
+}
+
+.knob input:checked~.knob-handle-bottom {
+	top: 4.2em;
+	border-top: 0;
+	border-bottom: 0.2em solid #141414;
+}
+
+.knob input:checked~.knob-handle-base {
+	top: 4.5em;
+	border-top: 0;
+	border-bottom: 0.2em solid rgba(255,255,255,0.35);
+}
+
+.knob input:checked~.knob-led-green {
+	-webkit-box-shadow: 0 0 3em rgb(0,161,75);
+	-moz-box-shadow: 0 0 3em rgb(0,161,75);
+	box-shadow: 0 0 3em rgb(0,161,75);
+}
+
+.knob input:checked~.knob-led-green .knob-led-glow {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.4);
+	filter: alpha(opacity=40);
+		animation: blink-animation 1.4s steps(3, start) infinite;
+
+}
+
+.knob input:checked~.knob-led-red {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.knob input:checked~.knob-led-red .knob-led-glow {
+	background: rgba(255, 255, 255, 0);
+	filter: alpha(opacity=0);
+}
+
+input[type="color"]{
+	width:11%;
+	height:40px;
+	margin:0 2% 0 2%
+	}
+
+#display{all:unset}
+
+	@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+	</style>
+	
+</head>
+<body>
+	
+
+	
+	<div id="viz">
+		<h1><b>&#9760;</b></h1>
+<!--
+<span id="copy">!</span>
+-->
+<span style="color:white;margin:7px 0 0 5px;padding:3px">||  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  ||
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  ||  </span>
+<span id="pwnyStatus">No audio input!</span>
+		<hr />
+<canvas id="display" width="350" height="110">
+</canvas>
+
+<!--
+		<canvas id="analyser" width="1024" height="200"></canvas>
+-->
+		<br>
+		<div class="pwnControls0">
+		<form oninput="document.getElementById('bcolorDiv').innerHTML=document.getElementById('bcolor').value.substr(1);
+		document.getElementById('hcolorDiv').innerHTML=document.getElementById('hcolor').value.substr(1);
+		document.getElementById('ocolorDiv').innerHTML=document.getElementById('ocolor').value.substr(1);
+		document.getElementById('eqfpsDiv').innerHTML=document.getElementById('eqfps').value
+		
+		document.getElementById('rainbowmixDiv').innerHTML=document.getElementById('eqmixrate').value
+		document.getElementById('matrixmixDiv').innerHTML=document.getElementById('matrixRate').value
+		
+		">
+<script>
+
+</script>
+
+	
+			<input type="color" id="bcolor" value="#ffffff" />
+				<span id="bcolorDiv" style="display:none">ffffff</span>
+			<input type="color" id="hcolor" value="#1D5987" />
+				<span id="hcolorDiv" style="display:none">1D5987</span>
+			<input type="color" id="ocolor" value="#111111" />
+				<span id="ocolorDiv" style="display:none">111111</span>
+			<input type="range" class="pwny" id="eqfps" min="1" max="60" step="1" value="12" style="vertical-align:bottom" />
+				<span id="eqfpsDiv" style="color:#DEDEDE;display:none">12</span><span style="cursor:pointer;color:#DEDEDE;display:none" title="FILS DE PUTERIES PAR SECONDES"> FPS</span>
+
+<span class="knob">
+	<span class="knob-border1">
+		<span class="knob-border2">
+			<input id="knob1" type="checkbox" checked />
+			<label for="knob1"></label>
+			<span class="knob-top"></span>
+			<span class="knob-shadow"></span>
+			<span class="knob-handle"></span>
+			<span class="knob-handle-left"></span>
+			<span class="knob-handle-right"></span>
+			<span class="knob-handle-top"></span>
+			<span class="knob-handle-bottom"></span>
+			<span class="knob-handle-base"></span>
+			<span class="knob-led knob-led-green">
+				<span class="knob-led-border">
+					<span class="knob-led-light">
+						<span class="knob-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="knob-led knob-led-red">
+				<span class="knob-led-border">
+					<span class="knob-led-light">
+						<span class="knob-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+
+<span class="knob">
+	<span class="knob-border1">
+		<span class="knob-border2">
+			<input id="knob2" type="checkbox" checked />
+			<label for="knob2"></label>
+			<span class="knob-top"></span>
+			<span class="knob-shadow"></span>
+			<span class="knob-handle"></span>
+			<span class="knob-handle-left"></span>
+			<span class="knob-handle-right"></span>
+			<span class="knob-handle-top"></span>
+			<span class="knob-handle-bottom"></span>
+			<span class="knob-handle-base"></span>
+			<span class="knob-led knob-led-green">
+				<span class="knob-led-border">
+					<span class="knob-led-light">
+						<span class="knob-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="knob-led knob-led-red">
+				<span class="knob-led-border">
+					<span class="knob-led-light">
+						<span class="knob-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+
+				
+				<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			<input id="switch1" type="checkbox" checked />
+			<label for="switch1"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+
+			<input id="switch2" onclick="if (document.getElementById('switch2').checked == true){daemon('rainbow')}
+			else {daemon('kill')}" type="checkbox" />
+
+			<label for="switch2"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+				
+				
+		<br>
+			
+			<button id="rainStart" onclick="rainCom('rainbow')">RAINBOW</button>
+			<br>
+<!--
+			<button href="#" id="" onclick="rainCom('rainstop')">STOP</button><br>
+			<span style="color:#DEDEDE"> RAINBOW MIX RATIO</span>			
+-->
+<!--
+			<input type="checkbox" id="pwnmatrix"  /><br>
+-->
+			<span style="color:#DEDEDE"> MATRIX MIX RATIO</span>
+			<input type="range" class="pwny" id="matrixRate" min="1" max="44" step="1" value="24" style="vertical-align:bottom" />
+			<span id="matrixmixDiv" style="color:#DEDEDE">24</span><span style="cursor:pointer;color:#DEDEDE" title="MATRIX PAR MINUTE"> MPM</span>
+			<br>
+			<span style="color:#DEDEDE"> RAINBOW MIX RATIO</span>
+			<input type="range" class="pwny" id="eqmixrate" min="1" max="360" step="1" value="24" style="vertical-align:bottom" />
+				<span id="rainbowmixDiv" style="color:#DEDEDE">24</span><span style="cursor:pointer;color:#DEDEDE" title="RAINBOW MIX RATIO"> RBS</span>
+		</form>
+		>
+<div id="piDstatus"></div>
+<div id="piDaemon"></div>
+		<br><br><br><br><br><br><br>
+		</div>
+	</div>
+	</div>
+<!--
+		<script src="js/audiodisplay.js"></script>
+-->
+
+
+<script src="js/segment-display.js"></script>	
+
+<script>
+
+  var display = new SegmentDisplay("display");
+  display.pattern         = "##:##:##";
+  display.displayAngle    = 6;
+  display.digitHeight     = 20;
+  display.digitWidth      = 14;
+  display.digitDistance   = 2.5;
+  display.segmentWidth    = 2;
+  display.segmentDistance = 0.3;
+  display.segmentCount    = 7;
+  display.cornerType      = 3;
+  display.colorOn         = "#24dd22";
+  display.colorOff        = "#1b4105";
+  display.draw();
+  
+  
+display.setValue('HE:LL:O');
+setTimeout(function(){
+
+display.setValue('  :po:ny');
+}, 1000);
+setTimeout(function(){
+
+display.setValue(' h:ac:65');
+}, 1500);
+//~ setTimeout(function(){
+
+  //~ window.setInterval('animate()', 100);
+//~ }, 3000);
+
+
+
+  //~ window.setTimeout('hello()', 1000);  
+
+  
+  //~ function animate() {
+    //~ var time    = new Date();
+    //~ var hours   = time.getHours();
+    //~ var minutes = time.getMinutes();
+    //~ var seconds = time.getSeconds();
+    //~ var value   = ((hours < 10) ? ' ' : '') + hours
+                //~ + ':' + ((minutes < 10) ? '0' : '') + minutes
+                //~ + ':' + ((seconds < 10) ? '0' : '') + seconds;
+    //~ display.setValue(value);
+  //~ }
+
+
+</script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
