@@ -16,9 +16,9 @@
  *  Kill anytime to keep the colors as a color roulette.
 
 ##### Deploy and run: 
-<h6><code>
+<h5><code>
 <code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
-</code></h6>
+</code></h5>
 
 ###### Dependencies: 
 
@@ -35,9 +35,14 @@
 
 <code>chromium-browser --app=http://localhost:9040/phpcorsair!</code>
 
-###### Rainbow only:
+###### Rainbow only via  the terminal:
 
 <code> php <(curl -s https://raw.githubusercontent.com/webdev23/phpCorsair/master/rainbow) 
+</code>
+
+or just:
+
+<code>./rainbow
 </code>
 
 All files should stays on the same folder, as they are going to talk to each others.
