@@ -15,15 +15,28 @@
  *  Add a keyboard shortcut to call, or run in terminal:
  *  Kill anytime to keep the colors as a color roulette.
 
-#### Install php7.0
+##### Deploy and run: 
 
-#### sudo apt install php7.0
+<code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
 
-#### To run phpCorsair: open the index.html file with chromium browser.
 
-You can also direcly try this command to get a rainbow:
+###### Dependencies: <a href="apt://php7.0">php7.0</a> <a href="apt://curl">curl</a>
 
-### php <(curl -s https://raw.githubusercontent.com/webdev23/phpCorsair/master/rainbow)
+<code>sudo apt install php7.0 && sudo apt install curl</code>
+
+###### To serve the daemon.php:
+
+<code>php -S localhost:9040</code>
+
+To run phpCorsair!, open the file with chromium browser.
+
+###### To run from the folder if the daemon is listening:
+<code>chromium-browser --app=http://localhost:9040/phpcorsair!</code>
+
+###### Rainbow only:
+
+<code> php <(curl -s https://raw.githubusercontent.com/webdev23/phpCorsair/master/rainbow) 
+</code>
 
 All files should stays on the same folder, as they are going to talk to each others.
 This should be all.
