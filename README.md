@@ -17,9 +17,14 @@
 
 #### Install php7.0
 
-## sudo apt install php7.0
+#### sudo apt install php7.0
 
 #### To run phpCorsair: open the index.html file with chromium browser.
+
+You can also direcly try this command to get a rainbow:
+
+### php <(curl -s https://raw.githubusercontent.com/webdev23/phpCorsair/master/rainbow)
+
 All files should stays on the same folder, as they are going to talk to each others.
 This should be all.
 
