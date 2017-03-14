@@ -1,5 +1,9 @@
+#!/usr/bin/php 
+
+
 <?php
 header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+error_reporting(0);
 
 $eqdata = $_GET['eqdata'];
 $eqbColor = $_GET['eqbColor'];
