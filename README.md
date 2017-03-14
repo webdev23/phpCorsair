@@ -1,4 +1,4 @@
-# phpCorsair! Spectral audio based events for corsair RGB devices.
+# phpCorsair!<br>Spectral audio based events for corsair RGB devices.
 #### Controls Corsair devices running under the ckb-daemon with php
 
 <img src="http://i.imgur.com/1TjI3cx.gif"></img>
@@ -16,9 +16,9 @@
  *  Kill anytime to keep the colors as a color roulette.
 
 ##### Deploy and run: 
-
+<h6><pre>
 <code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
-
+</pre></h6>
 
 ###### Dependencies: 
 
