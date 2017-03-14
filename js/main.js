@@ -79,7 +79,7 @@ display.setValue(document.getElementById('eqfpsDiv').innerHTML+"  "+pwnyFreqbars
 		  var pwnRand = document.getElementById('switch1').checked;
 
 
-		  var pwnyUrl = "http://localhost/daemon.php?eqdata="+pwnyFreqbars+"&eq1="+pwnyFreq[2]+
+		  var pwnyUrl = "http://localhost:9040/daemon.php?eqdata="+pwnyFreqbars+"&eq1="+pwnyFreq[2]+
 							"&eq2="+pwnyFreq[6]+"&eq3="+pwnyFreq[12]+"&eq4="+pwnyFreq[16]+"&eq5="+pwnyFreq[19]+
 							"&eq6="+pwnyFreq[24]+"&eq7="+pwnyFreq[28]+"&eq8="+pwnyFreq[32]+
 							"&eqbColor="+eqBcol+
@@ -112,7 +112,7 @@ function rainCom(mode) {
 			
 	    }
 	  }
-	  var comUrl = "http://localhost/daemon.php?mode="+mode;
+	  var comUrl = "http://localhost:9040/daemon.php?mode="+mode;
 		 cmdRain.open("GET", comUrl, true);
 		 cmdRain.send()
 }
@@ -124,7 +124,7 @@ function effect(mode,pot) {
 			
 	    }
 	  } // BURN BABY BURN
-	  var effUrl = "http://localhost/daemon.php?mode="+mode+"&pot="+pot
+	  var effUrl = "http://localhost:9040/daemon.php?mode="+mode+"&pot="+pot
 		 eff.open("GET", effUrl, true)
 		 eff.send()
 }
@@ -140,7 +140,7 @@ function daemon(mode) {
 	  } // BURN BABY BURN
 		  var eqBcol = document.getElementById('bcolorDiv').innerHTML;
 		  var eqOcol = document.getElementById('ocolorDiv').innerHTML; 
-	  var daemonUrl = "http://localhost/daemon.php?mode="+mode+"&from"+eqBcol+"&to"+eqOcol
+	  var daemonUrl = "http://localhost:9040/daemon.php?mode="+mode+"&from"+eqBcol+"&to"+eqOcol
 		 daemon.open("GET", daemonUrl, true)
 		 daemon.send()
 		 
