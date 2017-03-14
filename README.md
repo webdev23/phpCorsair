@@ -27,13 +27,12 @@
 
 <code>sudo apt install php7.0 && sudo apt install curl</code>
 
-###### To serve the daemon.php:
+###### To serve daemon.php from the folder:
 
 <code>php -S localhost:9040</code>
 
-To run phpCorsair!, open the file with chromium browser.
+###### To run from the folder if the daemon is listening open the file with chromium browser, or with this command line:.
 
-###### To run from the folder if the daemon is listening:
 <code>chromium-browser --app=http://localhost:9040/phpcorsair!</code>
 
 ###### Rainbow only:
