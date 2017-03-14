@@ -20,7 +20,10 @@
 <code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
 
 
-###### Dependencies: <a href="apt://php7.0">php7.0</a> <a href="apt://curl">curl</a>
+###### Dependencies: 
+
+<a href="apt://php7.0">php7.0</a> 
+<a href="apt://curl">curl</a>
 
 <code>sudo apt install php7.0 && sudo apt install curl</code>
 
