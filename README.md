@@ -16,9 +16,9 @@
  *  Kill anytime to keep the colors as a color roulette.
 
 ##### Deploy and run: 
-<h6><pre>
+<h6><code>
 <code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
-</pre></h6>
+</code></h6>
 
 ###### Dependencies: 
 
