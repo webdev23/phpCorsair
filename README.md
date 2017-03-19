@@ -17,7 +17,7 @@
 
 ##### Deploy and run: 
 <h5><code>
-<code>svn checkout https://github.com/webdev23/phpCorsair/ && cd phpCorsair/trunk && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040</code>
+git init && git pull https://github.com/webdev23/phpCorsair.git && chromium-browser --app=http://localhost:9040/phpcorsair! | php -S localhost:9040
 </code></h5>
 
 ###### Dependencies: 
@@ -30,6 +30,10 @@
 ###### To serve daemon.php from the folder:
 
 <code>php -S localhost:9040</code>
+
+###### Or as a daemon, to allow to close the terminal:
+
+<code>nohup chromium-browser --app=http://localhost:9040/phpcorsair! | nohup php -S localhost:9040 &</code>
 
 ###### To run from the folder if the daemon is listening open the file with chromium browser, or with this command line:.
 
