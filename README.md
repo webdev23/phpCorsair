@@ -31,9 +31,15 @@ git init && git pull https://github.com/webdev23/phpCorsair.git && chromium-brow
 
 <code>php -S localhost:9040</code>
 
-###### Or as a daemon, to allow to close the terminal:
+###### Or as a daemon:
 
 <code>nohup chromium-browser --app=http://localhost:9040/phpcorsair! | nohup php -S localhost:9040 &</code>
+
+###### You may want to close the terminal and keep the program running, with screen:
+
+<code>sudo apt install screen</code>
+
+<code>screen chromium-browser --app=http://localhost:9040/phpcorsair!</code>
 
 ###### To run from the folder if the daemon is listening open the file with chromium browser, or with this command line:.
 
