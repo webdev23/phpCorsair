@@ -58,4 +58,6 @@ or just:
 All files should stays on the same folder, as they are going to talk to each others.
 This should be all.
 
+Here is a youtube video of the beginning of this project, showing some features: https://www.youtube.com/watch?v=H7mKN2PASGM
+
 Enjoy!
